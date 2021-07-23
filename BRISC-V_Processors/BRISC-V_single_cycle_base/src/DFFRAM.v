@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
-`ifndef USE_CUSTOM_DFFRAM
+//`ifndef USE_CUSTOM_DFFRAM
 
 module DFFRAM(
 `ifdef USE_POWER_PINS
@@ -42,7 +42,7 @@ always @(posedge CLK) begin
     end
 end
 endmodule
-
+/*
 `else
 
 module DFFRAM #( parameter COLS=1)
@@ -170,7 +170,7 @@ module DFFRAM #( parameter COLS=1)
         .X(Do),
         .A(Do_pre)
     );
-
+*/
 endmodule
 
-`endif
+// `endif
