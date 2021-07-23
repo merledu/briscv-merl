@@ -1,0 +1,26 @@
+Description:
+This version of BRISC-V implements a 5 stage pipeline with forwarding and
+bypassing. It should only stall on a load/use hazard. No cache is implemented
+yet.
+
+This version should replace the 5 stage pipeline stall base version as a
+starting point for new projects, unless area is the number one priority.
+
+Features:
+- 5 stage pipeline
+    - forwarding/bypassing
+    - should only stall on load/use
+- Small, fixed size memories
+    - 2048 or 1024 words per memory
+    - make sure stack pointer is small enough
+    - setting stack pointer to 450 works in demos
+    - TODO: Add memory size parameter. I believe this should be separate from the
+            ADDRESS_BITS parameter.
+
+Updates:
+
+The signed ALU bugs have been fixed. All ALU operations are now
+correctly implemented as signed or unsigned.
+
+The PC wire reset behavior has been moved from combinational to clocked logic to
+allow instruction memory to be infered as BRAM.

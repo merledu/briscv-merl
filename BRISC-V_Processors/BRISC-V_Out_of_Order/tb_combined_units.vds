@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2015.1 (64-bit)
+# SW Build 1215546 on Mon Apr 27 19:07:21 MDT 2015
+# IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
+# Start of session at: Thu Sep 20 16:49:41 2018
+# Process ID: 21865
+# Log file: /opt/Xilinx/Vivado/2015.1/bin/out_of_order_system_fetch/out_of_order_system_fetch.runs/synth_1/tb_combined_units.vds
+# Journal file: /opt/Xilinx/Vivado/2015.1/bin/out_of_order_system_fetch/out_of_order_system_fetch.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source tb_combined_units.tcl -notrace
+Command: synth_design -top tb_combined_units -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+WARNING: [Common 17-348] Failed to get the license for feature 'Synthesis' and/or device 'xc7vx485t'
+0 Infos, 1 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+ERROR: [Common 17-345] A valid license was not found for feature 'Synthesis' and/or device 'xc7vx485t'. Please run the Vivado License Manager for assistance in determining
+which features and devices are licensed for your system.
+Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". 
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 20 16:49:47 2018...

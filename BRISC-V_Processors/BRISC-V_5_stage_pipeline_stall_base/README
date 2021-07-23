@@ -1,0 +1,29 @@
+Description:
+This is the version of the BRISC-V processor submitted for the EC513 project.
+It implements a 5 stage pipeline with stalls/flushes. No cache is integrated
+yet.
+
+This version has been cleaned up and was the starting point for the bypassed
+pipeline version. The BRISC-V_5_stage_pipeline_stall_bypass version should
+replace this version as a starting point for future additions.
+
+Features:
+- 5 stage pipeline
+    - 2 nops after JAL/JALR/any branch
+- Small, fixed size memories
+    - 2048 words per memory
+    - make sure stack pointer is small enough
+    - setting stack pointer to 450 works in demos
+    - TODO: Add memory size parameter. I believe this should be separate from the
+            ADDRESS_BITS parameter.
+- Signed shift bug in ALU has been fixed
+- No peripherals are included
+- No Cache
+
+Updates:
+
+The signed ALU bugs have been fixed. All ALU operations are now
+correctly implemented as signed or unsigned.
+
+The PC wire reset behavior has been moved from combinational to clocked logic to
+allow instruction memory to be infered as BRAM.

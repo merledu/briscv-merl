@@ -1,0 +1,60 @@
+Description:
+
+This version of BRISC-V implements a 7 stage pipeline with forwarding and
+bypassing. It should only stall on a load/use hazard. No cache is implemented
+yet. Instruction and data memories are implemented as BRAMs (The instruction
+memory uses the BSRAM module and address stall logic in the i_mem_interface
+module).
+
+This version has been cleaned up and opimized. All instances of 'old_stall'
+have been removed. The old_stall signal was used when a signal's stall logic
+was placed after its register, forcing the signal to be stored in an
+'old_<signal>' register. Using these 'old' signals cost alot of area and
+significantly penalized Fmax. The table below compares the optimized 7 stage
+processor with the 5 stage processor.
+
++----------------+----------------+----------------+
+|                | 5 Stage Bypass | 7 Stage Bypass |
++----------------+----------------+----------------+
+| Logic Elements | 3,406          | 3,366          |
++----------------+----------------+----------------+
+| Fmax           | 61.5MHz        | 81.1MHz        |
++----------------+----------------+----------------+
+
+THIS 7 STAGE VERSION SHOULD BE THE STARTING POINT FOR ALL NEW DESIGNS.
+
+This verison is the fastest version of the processor and is smaller than the
+5 stage bypassed processor despite having two extra pipeline stages.
+
+Features:
+- 7 stage pipeline
+    - forwarding/bypassing
+    - should only stall on load/use
+    - smaller than the 5 stage bypassed processor
+- 4096 word BRAM memory by default.
+    - Memory size can be changed
+    - make sure stack pointer is small enough
+    - setting stack pointer to 450 works in demos
+
+Updates:
+
+- Change most of the code style to make it uniform.
+
+- Removed all instances of 'old_stall', including the "Bonus" stall cycle.
+
+- Moved instruction memory to memory hierarchy module. Now fetch module has an
+  instruction memory interface that could support several types of memory, such
+  as caches or bram.
+
+- Moved data memory to memory hierarchy module. Now the memory unit module has
+  a data memory interface taht could support several types of memory, such as
+  caches or bram.
+
+- Fixed kernel frontend: Change line 18 from
+    "addi s3,zero,0"
+    to
+    "addi a3,zero,0"
+
+- Deleted PC wire variable from fetch unit, replaced it with the existing PC_reg
+  variable because they were eqivilant.
+

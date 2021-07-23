@@ -1,0 +1,10 @@
+Alan's Notes and Fixes for the BRISC-V EC513 processor
+
+Major Issues:
+
+Minor Issues:
+1. Several indents mix tabs and spaces. This ruins the indenting if the tab size
+does not match the size of the authors editor. Most editors support replacing
+tabs with spaces, we should use these features to make sure the code looks the
+same on any machine.
+
