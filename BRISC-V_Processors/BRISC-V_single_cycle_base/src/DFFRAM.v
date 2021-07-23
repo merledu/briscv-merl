@@ -29,8 +29,9 @@ module DFFRAM(
     input [7:0] A
 );
   
+localparam MEM_WORDS = 2**8;
 
-reg [31:0] mem [0:`MEM_WORDS-1];
+reg [31:0] mem [0:MEM_WORDS-1];
 
 always @(posedge CLK) begin
     if (EN == 1'b1) begin
