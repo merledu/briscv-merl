@@ -95,7 +95,7 @@ ALU #(DATA_WIDTH) EU (
 
 /* Only JALR Target. JAL happens in the decode unit*/
 assign JALR_target        = {regRead_1 + extend} & 32'hffff_fffe; 
-
+/*
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -114,5 +114,5 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
-
+*/
 endmodule

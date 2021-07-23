@@ -117,7 +117,7 @@ always @ (posedge clock) begin
         end
       end
 end
-
+/*
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -140,5 +140,5 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
-
+*/
 endmodule

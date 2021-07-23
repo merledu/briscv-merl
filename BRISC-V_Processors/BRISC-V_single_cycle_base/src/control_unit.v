@@ -97,7 +97,7 @@ module control_unit #(parameter CORE = 0)(
     assign next_PC_sel   = (opcode == BRANCH)?  2'b01 : 
                            (opcode == JAL)?     2'b10 : 
                            (opcode == JALR)?    2'b11 : 0; 
-    
+/*    
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -117,4 +117,5 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
+*/
 endmodule

@@ -48,7 +48,7 @@ input report;
 assign write_data = opSel? memory_data : ALU_Result; 
 assign write_reg  = opReg; 
 assign write      = opWrite; 
-
+/*
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -64,7 +64,7 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
-
+*/
 endmodule
 
  

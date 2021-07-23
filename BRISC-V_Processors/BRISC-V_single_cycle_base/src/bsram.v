@@ -58,7 +58,7 @@ always@(posedge clock) begin : RAM_WRITE
     if(writeEnable)
         sram[writeAddress] <= writeData;
 end
-
+/*
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -73,6 +73,6 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end 
  end    
-
+*/
 endmodule
 

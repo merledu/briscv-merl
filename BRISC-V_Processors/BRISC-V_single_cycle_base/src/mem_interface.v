@@ -73,7 +73,7 @@ DFFRAM dccm_1KB(
 assign out_addr = read? read_address : 0;
 assign valid    = (read | write)? 1 : 0;
 assign ready    = (read | write)? 0 : 1; /// Just for testing now
-
+/*
 reg [31: 0] cycles;
 always @ (posedge clock) begin
     cycles <= reset? 0 : cycles + 1;
@@ -91,6 +91,6 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
-
+*/
 endmodule
 

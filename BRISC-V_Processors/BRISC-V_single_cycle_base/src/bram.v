@@ -55,7 +55,7 @@ reg [DATA_WIDTH-1:0]     ram [0:MEM_DEPTH-1];
             ram[writeAddress] <= writeData;
     end
     
-//*  
+/*  
 always @ (posedge clock) begin 
     if(readEnable | writeEnable) begin 
           $display ("-------------------------------BRAM-------------------------------------------");  
@@ -66,6 +66,6 @@ always @ (posedge clock) begin
           $display ("-----------------------------------------------------------------------------");
     end 
  end  
- //*/
+ */
 endmodule
 

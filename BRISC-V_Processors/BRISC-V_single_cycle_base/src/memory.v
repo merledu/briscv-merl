@@ -63,7 +63,7 @@ mem_interface #(CORE, DATA_WIDTH, INDEX_BITS, OFFSET_BITS, ADDRESS_BITS)
                      .ready(ready),
                      .report(report)
 );
-
+/*
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -80,5 +80,5 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
-
+*/
 endmodule

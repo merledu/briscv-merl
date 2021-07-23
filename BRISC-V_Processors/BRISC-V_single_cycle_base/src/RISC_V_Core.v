@@ -260,7 +260,7 @@ always @ (posedge clock) begin
               to_peripheral       <= 0;
               to_peripheral_data  <= write_data; 
               to_peripheral_valid <= 1;
-              $display (" Core [%d] Register [%d] Value = %d", CORE, write_reg, write_data);
+              //$display (" Core [%d] Register [%d] Value = %d", CORE, write_reg, write_data);
          end
          else to_peripheral_valid <= 0;  
 end

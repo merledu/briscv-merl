@@ -106,7 +106,7 @@ regFile #(32, 5) registers (
                 .read_data1(rs1_data), 
                 .read_data2(rs2_data)
 );
-
+/*
 reg [31: 0] cycles; 
 always @ (posedge clock) begin 
     cycles <= reset? 0 : cycles + 1; 
@@ -129,5 +129,6 @@ always @ (posedge clock) begin
         $display ("----------------------------------------------------------------------");
     end
 end
+*/
 
 endmodule
